@@ -360,9 +360,9 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[8] =
+static const flex_int16_t yy_accept[9] =
     {   0,
-        0,    0,    5,    2,    3,    1,    0
+        1,    1,    5,    2,    3,    1,    1,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -399,27 +399,27 @@ static const YY_CHAR yy_ec[256] =
 
 static const YY_CHAR yy_meta[4] =
     {   0,
-        1,    1,    1
+        1,    1,    2
     } ;
 
-static const flex_int16_t yy_base[8] =
+static const flex_int16_t yy_base[10] =
     {   0,
-        0,    0,    4,    5,    5,    5,    5
+        0,    0,    5,    6,    6,    0,    0,    6,    2
     } ;
 
-static const flex_int16_t yy_def[8] =
+static const flex_int16_t yy_def[10] =
     {   0,
-        7,    1,    7,    7,    7,    7,    0
+        8,    1,    8,    8,    8,    9,    9,    0,    8
     } ;
 
-static const flex_int16_t yy_nxt[9] =
+static const flex_int16_t yy_nxt[10] =
     {   0,
-        4,    5,    6,    7,    3,    7,    7,    7
+        4,    5,    6,    7,    8,    3,    8,    8,    8
     } ;
 
-static const flex_int16_t yy_chk[9] =
+static const flex_int16_t yy_chk[10] =
     {   0,
-        1,    1,    1,    3,    7,    7,    7,    7
+        1,    1,    1,    9,    3,    8,    8,    8,    8
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -686,13 +686,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 8 )
+				if ( yy_current_state >= 9 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 5 );
+		while ( yy_base[yy_current_state] != 6 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -1035,7 +1035,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 8 )
+			if ( yy_current_state >= 9 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1063,11 +1063,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 8 )
+		if ( yy_current_state >= 9 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 7);
+	yy_is_jam = (yy_current_state == 8);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1753,7 +1753,7 @@ int main()
 
 yylex();
 
-printf("\nNumber of Captial letters " 
+printf("\nNumber of Capital letters " 
       "in the given input - %d\n", count); 
   
 return 0; 
