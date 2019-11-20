@@ -1,0 +1,1 @@
+lex f.lex && gcc lex.yy.c && ./a.out

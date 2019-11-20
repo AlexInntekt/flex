@@ -3,9 +3,9 @@ int count=0;
 %}
 
 %%
-[A-Z] {printf("%s capital letter\n", yytext); 
+[a-zA-Z]+[1-4]*3 {printf("%s matches\n", yytext); 
        count++;} 
-.     {printf("%s not a capital letter\n", yytext);} 
+.     {printf("%s does not match\n", yytext);} 
 \n    {return 0;} 
 %%
 
